@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marium Sufiyan - Content Creator & Social Media Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Gold color customization - brighter for dark background */
+    .text-gold { color: #d4af37; }
+    .bg-gold { background-color: #d4af37; }
+    .hover\:bg-gold-dark:hover { background-color: #b8962b; }
+
+    /* Dark background and text colors */
+    body {
+      background-color: #443737;
+      color: #e0e0e0;
+      font-family: sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #d4af37;
+    }
+
+    /* Smooth fade-in animation */
+    .fade-in {
+      animation: fadeIn ease 1s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Card backgrounds */
+    #services > div > div,
+    #testimonials blockquote,
+    #contact form {
+      background-color: rgba(255 255 255 / 0.07);
+      border-color: rgba(212 175 55 / 0.5);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      border-style: solid;
+      border-width: 1px;
+    }
+    /* Hover scale and glow on cards */
+    #services > div > div:hover,
+    #testimonials blockquote:hover,
+    #contact form:hover {
+      box-shadow: 0 0 15px 3px rgba(212, 175, 55, 0.7);
+      transform: scale(1.02);
+      border-color: #d4af37;
+      cursor: pointer;
+    }
+
+    /* Borders and highlights */
+    h1, h2, h3 {
+      color: #f0e68c;
+      text-shadow: 0 0 5px #d4af37;
+    }
+    .border-gold {
+      border-color: #d4af37;
+      box-shadow: 0 0 8px #d4af37;
+    }
+
+    /* Form inputs */
+    input, textarea {
+      background-color: #222;
+      color: #eee;
+      border: 1px solid #555;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 8px #d4af37;
+    }
+
+    /* Buttons */
+    button, a.bg-yellow-500, a.bg-gold {
+      background-color: #d4af37;
+      color: #121212;
+      transition: background-color 0.3s ease, box-shadow 0.4s ease;
+      box-shadow: 0 0 10px #d4af37;
+    }
+    button:hover, a.bg-yellow-500:hover, a.bg-gold:hover {
+      background-color: #b8962b;
+      color: #121212;
+      box-shadow: 0 0 20px #b8962b;
+    }
+
+    /* Social icons background */
+    .bg-yellow-500 {
+      background-color: #d4af37 !important;
+      color: #121212 !important;
+      transition: box-shadow 0.3s ease;
+      box-shadow: 0 0 8px #d4af37;
+    }
+    .bg-yellow-500:hover {
+      background-color: #b8962b !important;
+      color: #121212 !important;
+      box-shadow: 0 0 20px #b8962b;
+    }
+
+    /* Portfolio item hover effects */
+    #portfolio .group:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px 5px rgba(212, 175, 55, 0.75);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 10;
+    }
+    #portfolio .group {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e1e1e;
+      color: #aaa;
+      text-shadow: 0 0 3px #d4af37;
+    }
+
+    /* Scroll to top button */
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background-color: #d4af37;
+      color: #121212;
+      border: none;
+      padding: 14px 21px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #d4af37;
+      cursor: pointer;
+      font-size: 20px;
+      display: none;
+      z-index: 1000;
+      transition: background-color 0.3s ease, box-shadow 0.4s ease;
+    }
+    #scrollToTopBtn:hover {
+      background-color: #b8962b;
+      box-shadow: 0 0 30px #b8962b;
+    }
+
+
+  </style>
+</head>
+<body>
+   <!--Hero Section-->
+  <section id="hero" class="text-center py-16">
+    <!-- Big Circle Photo -->
+    <div class="w-56 h-56 rounded-full overflow-hidden border-4 border-gold shadow-lg mx-auto transition-transform duration-300 hover:scale-105 hover:drop-shadow-lg">
+      <img src="your-photo.jpg" alt="Marium Sufiyan" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Name & Tagline -->
+    <h1 class="text-4xl font-bold mt-6">Marium Sufiyan</h1>
+    <p class="text-xl+ mt-2 max-w-xl mx-auto text-gray-300">
+      Creating bold, engaging content that connects and converts.
+    </p>
+
+    <!-- Social Links -->
+    <div class="mt-6 flex justify-center space-x-4">
+      <a href="https://instagram.com/mariumsufiyan" target="_blank" aria-label="Instagram"
+        class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-500 text-black text-xl shadow transition duration-300 hover:bg-yellow-600 hover:drop-shadow-xl">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/MariumSufiyanDigitalInsight" target="_blank" aria-label="Facebook"
+        class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-500 text-black text-xl shadow transition duration-300 hover:bg-yellow-600 hover:drop-shadow-xl">
+        <i class="fab fa-facebook"></i>
+      </a>
+     <a href="tel:03128792639" aria-label="Phone"
+    class="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-500 text-black text-xl shadow transition duration-300 hover:bg-yellow-600"
+    onclick="if (!/Mobi|Android/i.test(navigator.userAgent)) { alert('Please use your mobile device to call this number.'); return false; }">
+    <i class="fas fa-phone"></i>
+</a>
+
+   </div>
+
+    <!-- Contact Me Button -->
+    <a href="#contact" class="mt-6 inline-block px-8 py-3 bg-gold rounded-full shadow-md hover:bg-gold-dark hover:drop-shadow-xl transition-colors duration-300">
+      Contact Me
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="max-w-4xl mx-auto px-6 py-16 fade-in" style="animation-delay: 0.4s;">
+    <h2 class="text-3xl font-bold text-center mb-6 border-b-4 border-gold inline-block pb-2">About Me</h2>
+    <p class="text-center max-w-3xl mx-auto text-gray-300">
+      I am a passionate content creator and strategic social media manager dedicated to elevating brands through captivating storytelling and data-driven campaigns. By blending creativity with analytics, I craft engaging digital experiences that not only grow audiences but also drive meaningful business results.
+    </p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 fade-in" style="animation-delay: 0.6s;">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 border-b-4 border-gold inline-block pb-2">Services</h2>
+      <div class="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto rounded-lg">
+        <div class="bg-black bg-opacity-30 p-6 rounded-lg border border-gold shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold mb-3 text-gold">Content Creation</h3>
+          <p class="text-gray-300">
+            Developing creative, authentic, and trend-savvy content tailored for Instagram, TikTok, and more.
+          </p>
+        </div>
+        <div class="bg-black bg-opacity-30 p-6 rounded-lg border border-gold shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold mb-3 text-gold">Social Media Management</h3>
+          <p class="text-gray-300">
+            Planning, scheduling, and optimizing campaigns to maximize engagement and grow your audience.
+          </p>
+        </div>
+        <div class="bg-black bg-opacity-30 p-6 rounded-lg border border-gold shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold mb-3 text-gold">Brand Strategy</h3>
+          <p class="text-gray-300">
+            Crafting cohesive brand stories and digital presence that align with your vision and business goals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-16 fade-in" style="animation-delay: 0.8s;">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 border-b-4 border-gold inline-block pb-2">"Explore the Work That Speaks Lounder Than Words"</h2>
+      <div class="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+        <!-- Example portfolio items -->
+        <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer border border-gold bg-black bg-opacity-20">
+          <img src="portfolio1.jpg" alt="Project 1" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-gold p-4">
+            <h3 class="text-lg font-semibold">Brand Awareness Campaign</h3>
+            <p class="mt-2 text-sm">Created viral TikTok content that increased brand engagement by 45%.</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer border border-gold bg-black bg-opacity-20">
+          <img src="portfolio2.jpg" alt="Project 2" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-gold p-4">
+            <h3 class="text-lg font-semibold">Instagram Content Series</h3>
+            <p class="mt-2 text-sm">Developed a themed content series that grew followers by 12k in 3 months.</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer border border-gold bg-black bg-opacity-20">
+          <img src="portfolio3.jpg" alt="Project 3" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-gold p-4">
+            <h3 class="text-lg font-semibold">Brand Strategy Workshop</h3>
+            <p class="mt-2 text-sm">Led strategic planning sessions resulting in improved brand identity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+ <section id="testimonials" class="py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 border-b-4 border-gold inline-block pb-2">Testimonials</h2>
+
+    <blockquote class="border border-gold rounded-lg p-6 bg-black bg-opacity-30 text-gray-300 mb-6 shadow-md flip-in" style="animation-delay: 0.2s;">
+      <p class="italic mb-4 typewriter" style="animation-delay: 0.8s;">"Marium’s creativity and dedication helped our brand explode on social media. Highly recommended!"</p>
+      <footer class="text-gold font-semibold">— Ayesha Khan, CEO, FashionBrand</footer>
+    </blockquote>
+
+    <blockquote class="border border-gold rounded-lg p-6 bg-black bg-opacity-30 text-gray-300 mb-6 shadow-md flip-in" style="animation-delay: 0.6s;">
+      <p class="italic mb-4 typewriter" style="animation-delay: 1.2s;">"Her strategic approach and authentic content brought real engagement and conversions."</p>
+      <footer class="text-gold font-semibold">— Bilal Ahmed, Marketing Director, TechStart</footer>
+    </blockquote>
+
+    <blockquote class="border border-gold rounded-lg p-6 bg-black bg-opacity-30 text-gray-300 mb-6 shadow-md flip-in" style="animation-delay: 1s;">
+      <p class="italic mb-4 typewriter" style="animation-delay: 1.6s;">"Working with Marium was a game changer for our campaign. Exceptional creativity and professionalism."</p>
+      <footer class="text-gold font-semibold">— Sana Malik, Founder, EcoWear</footer>
+    </blockquote>
+
+    <blockquote class="border border-gold rounded-lg p-6 bg-black bg-opacity-30 text-gray-300 mb-6 shadow-md flip-in" style="animation-delay: 1.4s;">
+      <p class="italic mb-4 typewriter" style="animation-delay: 2s;">"Her content strategy boosted our brand visibility and helped us connect with our audience deeply."</p>
+      <footer class="text-gold font-semibold">— Kamran Shah, CEO, Innovatech</footer>
+    </blockquote>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 fade-in" style="animation-delay: 1.2s;">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-gold inline-block pb-2">Contact Me</h2>
+      <form action="https://formspree.io/f/xzzgpnnj" method="POST" id="contactForm" class="p-6 rounded-lg border border-gold shadow-md bg-black bg-opacity-30" novalidate>
+        <div class="mb-6">
+          <label for="name" class="block mb-2 font-semibold text-gold">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+            class="w-full px-4 py-2 rounded border border-gray-600 focus:border-gold focus:ring focus:ring-gold/50"
+            required
+          />
+          <p class="text-red-400 mt-1 text-sm hidden" id="nameError">Please enter your name.</p>
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block mb-2 font-semibold text-gold">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="_replyto"
+            placeholder="Your email address"
+            class="w-full px-4 py-2 rounded border border-gray-600 focus:border-gold focus:ring focus:ring-gold/50"
+            required
+          />
+          <p class="text-red-400 mt-1 text-sm hidden" id="emailError">Please enter a valid email address.</p>
+        </div>
+        <div class="mb-6">
+          <label for="message" class="block mb-2 font-semibold text-gold">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Your message"
+            class="w-full px-4 py-2 rounded border border-gray-600 focus:border-gold focus:ring focus:ring-gold/50"
+            required
+          ></textarea>
+          <p class="text-red-400 mt-1 text-sm hidden" id="messageError">Please enter a message.</p>
+        </div>
+        <button
+          type="submit"
+          class="w-full py-3 bg-gold text-black font-semibold rounded hover:bg-gold-dark transition-colors duration-300 shadow"
+        >
+          Send Message
+        </button>
+        <p id="formSuccess" class="text-green-400 mt-4 text-center hidden">Thank you! Your message has been sent.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-sm">
+    &copy; 2025 Marium Sufiyan. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Scroll to top button show/hide and functionality
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.style.display = 'block';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Form validation logic
+    const form = document.getElementById('contactForm');
+    const nameInput = form.elements['name'];
+    const emailInput = form.elements['email'];
+    const messageInput = form.elements['message'];
+
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
+    const formSuccess = document.getElementById('formSuccess');
+
+    function validateEmail(email) {
+      // Simple email regex
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let valid = true;
+
+      // Name validation
+      if (!nameInput.value.trim()) {
+        nameError.classList.remove('hidden');
+        valid = false;
+      } else {
+        nameError.classList.add('hidden');
+      }
+
+      // Email validation
+      if (!validateEmail(emailInput.value.trim())) {
+        emailError.classList.remove('hidden');
+        valid = false;
+      } else {
+        emailError.classList.add('hidden');
+      }
+
+      // Message validation
+      if (!messageInput.value.trim()) {
+        messageError.classList.remove('hidden');
+        valid = false;
+      } else {
+        messageError.classList.add('hidden');
+      }
+
+      if (valid) {
+        // Normally here you would submit data via AJAX or similar
+        formSuccess.classList.remove('hidden');
+        form.reset();
+
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          formSuccess.classList.add('hidden');
+        }, 5000);
+      } else {
+        formSuccess.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
+
