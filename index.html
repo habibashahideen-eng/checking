@@ -282,7 +282,7 @@
   <section id="contact" class="py-16 fade-in" style="animation-delay: 1.2s;">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-gold inline-block pb-2">Contact Me</h2>
-      <form action="https://formspree.io/f/xzzgpnnj" method="POST" id="contactForm" class="p-6 rounded-lg border border-gold shadow-md bg-black bg-opacity-30" novalidate>
+      <form action="https://formspree.io/f/moqprjdp" method="POST" id="contactForm" class="p-6 rounded-lg border border-gold shadow-md bg-black bg-opacity-30" novalidate>
         <div class="mb-6">
           <label for="name" class="block mb-2 font-semibold text-gold">Name</label>
           <input
@@ -357,64 +357,76 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Form validation logic
+    // form validation //
     const form = document.getElementById('contactForm');
-    const nameInput = form.elements['name'];
-    const emailInput = form.elements['email'];
-    const messageInput = form.elements['message'];
+const nameInput = form.elements['name'];
+const emailInput = form.elements['email'];
+const messageInput = form.elements['message'];
 
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const messageError = document.getElementById('messageError');
-    const formSuccess = document.getElementById('formSuccess');
+const nameError = document.getElementById('nameError');
+const emailError = document.getElementById('emailError');
+const messageError = document.getElementById('messageError');
+const formSuccess = document.getElementById('formSuccess');
 
-    function validateEmail(email) {
-      // Simple email regex
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-      let valid = true;
+  let valid = true;
 
-      // Name validation
-      if (!nameInput.value.trim()) {
-        nameError.classList.remove('hidden');
-        valid = false;
-      } else {
-        nameError.classList.add('hidden');
-      }
+  // Name validation
+  if (!nameInput.value.trim()) {
+    nameError.classList.remove('hidden');
+    valid = false;
+  } else {
+    nameError.classList.add('hidden');
+  }
 
-      // Email validation
-      if (!validateEmail(emailInput.value.trim())) {
-        emailError.classList.remove('hidden');
-        valid = false;
-      } else {
-        emailError.classList.add('hidden');
-      }
+  // Email validation
+  if (!validateEmail(emailInput.value.trim())) {
+    emailError.classList.remove('hidden');
+    valid = false;
+  } else {
+    emailError.classList.add('hidden');
+  }
 
-      // Message validation
-      if (!messageInput.value.trim()) {
-        messageError.classList.remove('hidden');
-        valid = false;
-      } else {
-        messageError.classList.add('hidden');
-      }
+  // Message validation
+  if (!messageInput.value.trim()) {
+    messageError.classList.remove('hidden');
+    valid = false;
+  } else {
+    messageError.classList.add('hidden');
+  }
 
-      if (valid) {
-        // Normally here you would submit data via AJAX or similar
+  if (valid) {
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
         formSuccess.classList.remove('hidden');
         form.reset();
-
-        // Hide success message after 5 seconds
         setTimeout(() => {
           formSuccess.classList.add('hidden');
         }, 5000);
       } else {
-        formSuccess.classList.add('hidden');
+        alert('Submission failed. Please try again.');
       }
-    });
+    })
+    .catch(() => alert('Submission failed. Please try again.'));
+  } else {
+    formSuccess.classList.add('hidden');
+  }
+});
+
+
   </script>
 </body>
 </html>
